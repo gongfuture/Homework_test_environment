@@ -1,15 +1,16 @@
-import time
-import turtle as t
+# Code written by gongfuture in 2023.2.19
+
+from turtle import *
 
 n = eval(input("请输入需要的边数："))
-t.setup(650, 400, 200, 200)
-t.pensize(3)
-t.penup()
-t.goto(50, 50)
-t.pendown()
-t.begin_fill()
-t.color('black')
-t.circle(40, steps=n)
-t.end_fill()
+setup(650, 400, 200, 200)
+pensize(3)
+penup()
+goto(50, 50)
+pendown()
+begin_fill()
+color('black')
+circle(40, steps=n)
+end_fill()
 
-input()
+# input()  # 需要暂停时启用

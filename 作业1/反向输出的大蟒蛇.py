@@ -1,3 +1,5 @@
+# Code written by gongfuture in 2023.2.19
+
 from turtle import *
 
 setup(650, 350, 200, 200)
