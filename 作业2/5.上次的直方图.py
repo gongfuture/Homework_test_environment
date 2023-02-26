@@ -1,10 +1,10 @@
-#
+# Code written by teacher modified and comment out by gongfuture in 2023.2.25
 
 # 做直方图
 
 import turtle as t
 
-ls = [69, 292, 33, 131, 61, 254, 500]  # 数据列表
+ls = [69, 292, 33, 131, 61, 254]  # 数据列表
 x = len(ls)
 y = max(ls)
 A_len = 25  # 数据轴宽度
@@ -19,7 +19,7 @@ t.goto(x0, y0)
 t.pendown()  # 移动至原点开始作图
 
 t.fd(X_len)
-t.fd(-X_len)
+t.goto(x0, y0)
 t.seth(90)
 t.fd(Y_len)  # 画出坐标轴
 t.goto(x0, y0)
