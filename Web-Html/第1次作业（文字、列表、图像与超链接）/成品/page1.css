@@ -1,0 +1,14 @@
+body{
+    background-color:white;
+    font-size:100%;
+    font-family:"宋体";
+}
+h1{
+    font-size:2.5em;
+    color:black;
+    text-align:center;
+}
+p{
+    text-indent: 2em;
+    color:black;
+}
