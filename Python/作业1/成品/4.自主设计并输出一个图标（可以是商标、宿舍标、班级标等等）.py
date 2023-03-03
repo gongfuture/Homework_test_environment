@@ -1,4 +1,9 @@
-# Code written by Qian Jinli and modified by gongfuture in 2023.2.20
+#!/user/bin/env python
+# -*- coding:utf-8 -*-
+# Code created by Qian Jinli and modified by gongfuture
+# Create Time: 2023/2/20
+# Create User: gongf
+# This file is a part of Homework_test_environment
 
 from turtle import *  # 引用turtle库至全局
 

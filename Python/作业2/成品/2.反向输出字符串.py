@@ -1,4 +1,9 @@
-# Code written by gongfuture in 2023.2.26
+#!/user/bin/env python
+# -*- coding:utf-8 -*-
+# Code created by gongfuture
+# Create Time: 2023/2/26
+# Create User: gongf
+# This file is a part of Homework_test_environment
 
 print('请输入需要反向输出的字符串', end="：")
 b = input()

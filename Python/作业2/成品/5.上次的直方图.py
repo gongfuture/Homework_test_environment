@@ -1,5 +1,9 @@
-# Code written by teacher modified and comment out by gongfuture in 2023.2.25
-
+#!/user/bin/env python
+# -*- coding:utf-8 -*-
+# Code created by teacher modified and comment out by gongfuture
+# Create Time: 2023/2/25
+# Create User: gongf
+# This file is a part of Homework_test_environment
 # 做直方图
 
 import turtle as t

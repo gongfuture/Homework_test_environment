@@ -1,4 +1,9 @@
-# Code written by gongfuture in 2023.2.25
+#!/user/bin/env python
+# -*- coding:utf-8 -*-
+# Code created by gongfuture
+# Create Time: 2023/2/25
+# Create User: gongf
+# This file is a part of Homework_test_environment
 
 birth = eval(input("请输入出生年份（四位年，例：1900）："))
 # 天干：年份减3，除以10，没有余数就是天干的最后一个，余数是1对应 甲 ，是2对应 乙 ，依次往后推
