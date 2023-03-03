@@ -11,12 +11,14 @@
 
 ## 正文
 
+[点击这里跳转到Web作业](#web作业)
+
 ### Python作业
 
-|  次数   | 需求                            | 成品                     | 详细内容            |
-|:-----:|-------------------------------|------------------------|-----------------|
-| 第一次作业 | [作业1.txt](Python/作业1/作业1.txt) | [作业1目录](Python/作业1/成品) | [作业1详细内容](#py1) |
-| 第二次作业 | [作业2.txt](Python/作业2/作业2.txt) | [作业2目录](Python/作业2/成品) | [作业2详细内容](#py2) |
+| 次数  | 内容                          | 需求                            | 成品                     | 详细内容            |
+|:---:|-----------------------------|-------------------------------|------------------------|-----------------|
+|  1  | 程序设计与Turtle库初识              | [作业1.txt](Python/作业1/作业1.txt) | [作业1目录](Python/作业1/成品) | [作业1详细内容](#作业1) |
+|  2  | 程序设计之表达式应用（I）与Turtle库应用（II） | [作业2.txt](Python/作业2/作业2.txt) | [作业2目录](Python/作业2/成品) | [作业2详细内容](#作业2) |
 
 <!--
 | 第三次作业 | [作业3.txt](Python/作业3/作业3.txt) | [作业3目录](Python/作业3/成品) | [作业3详细内容](#py3) |
@@ -25,13 +27,10 @@
 | 第六次作业 | [作业6.txt](Python/作业6/作业6.txt) | [作业6目录](Python/作业6/成品) | [作业6详细内容](#py6) |
 -->
 
-<a name="py1"></a>
-
-#### 作业1</br>
+#### 作业1
 
 需求：[作业1.txt](Python/作业1/作业1.txt)  
 成品：位于 [作业1](Python/作业1/成品) 目录下，点击跳转，~~目前共完成(4/5)~~ 第五项已被老师移动至下一次作业
-
 <details>
 <summary>详细内容点击展开</summary>
 <details>
@@ -213,9 +212,8 @@ circle(-180)  # 画出外框
 
 </details>
 </details>
-<a name="py2"></a>
 
-#### 作业2</br>
+#### 作业2
 
 需求：[作业2.txt](Python/作业2/作业2.txt)</br>
 成品：位于 [作业2](Python/作业2/成品) 目录下，点击跳转
@@ -616,10 +614,139 @@ t.done()
 
 ### Web作业
 
-<!--
-表格新建行标准格式
-| 第x次作业 | [作业x.txt](Python/作业x/作业x.txt) | [作业x目录](Python/作业x/成品) | [作业x详细内容](#pyx) |
+[点击这里跳转到Python作业](#python作业)
 
+| 次数  | 内容           | 需求                                                                   | 成品                                         | 附件                                               | 详细内容                |
+|:---:|--------------|----------------------------------------------------------------------|--------------------------------------------|--------------------------------------------------|---------------------|
+|  1  | 文字、列表、图像与超链接 | [第1次作业.txt](Web-Html/第1次作业（文字、列表、图像与超链接）/要求/第1次作业（文字、列表、图像与超链接）.txt) | [第1次作业目录](Web-Html/第1次作业（文字、列表、图像与超链接）/成品) | [第1次作业附件](Web-Html/第1次作业（文字、列表、图像与超链接）/要求/作业1附件) | [第1次作业详细内容](#第1次作业) |
+
+#### 第1次作业
+
+需求：[第1次作业（文字、列表、图像与超链接）.txt](Web-Html/第1次作业（文字、列表、图像与超链接）/要求/第1次作业（文字、列表、图像与超链接）.txt)  
+附件：位于[作业1附件](Web-Html/第1次作业（文字、列表、图像与超链接）/要求/作业1附件)目录下，点击跳转  
+成品：位于[成品](Web-Html/第1次作业（文字、列表、图像与超链接）/成品)目录下，点击跳转
+
+<details>
+<summary>详细内容点击展开</summary>
+<details>
+<summary>page1</summary>
+
+HtmL
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="gongfuture" name="author">
+    <link href="page1.css" rel="stylesheet" type="text/css">
+    <title>page1</title>
+</head>
+<body>
+<h1>
+    关于我们
+</h1>
+<p><span style="font-size:1.5em;color:red;">五</span>十个不同的分子，在不同状态下进入了同一容器，这就组成了我们的家——<b>计算机应用专业</b>。<i>在这个容器里，我们碰撞着，摩擦着，产生了各色各样的灵感，活力与情绪。</i>
+</p>
+<p><span style="font-size:1.5em;color:red;">在</span>不地碰撞和摩擦中，分子也不断地变化，成长着，最终可走出这个容器，勇敢地面对、挑战外面的世界。
+    不管外面如何复杂、艰难，请大家彼此珍惜这段我们相逢相识相知的日子，在这里我们痛过笑过哭过，不论是苦的还是甜的，这都是我们年轻的见证。
+</p>
+<p><span style="font-size:1.5em;color:red;">无</span>论以后的日子，你会碰到什么困难，遇到什么坎坷，<span
+        style="color:blue">请记住</span>在这里还有另外的四十九份热情和真心支持着，鼓励着你，<span
+        style="color:blue">请记住</span>我们是一个团体，不会丢下谁，不会落下谁。共同奋进！！
+</p>
+<p style="text-align:right;text-decoration:underline;">我们永远的家——计算机应用专业！</p>
+<hr style="border: 0.3em solid grey;"/>
+<ol start="1" type="1">
+    <li><a href="page1.html" title="第一个网页">第一个网页</a></li>
+    <li><a href="page2.html" title="第二个网页">第二个网页</a></li>
+</ol>
+</body>
+</html>
+```
+
+Css
+
+```css
+body{
+    background-color:white;
+    font-size:100%;
+    font-family:"宋体";
+}
+h1{
+    font-size:2.5em;
+    color:black;
+    text-align:center;
+}
+p{
+    text-indent: 2em;
+    color:black;
+}
+
+```
+
+</details>
+<details>
+<summary>page2</summary>
+
+Html
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta content="gongfuture" name="author">
+    <link href="page2.css" rel="stylesheet" type="text/css">
+    <title>page2</title>
+</head>
+<body>
+<h1>
+    关于我们
+</h1>
+<p>五十个不同的分子，</br>
+    在不同状态下进入了同一容器，</br>
+    这就组成了我们的家——计算机应用专业。</br>
+    在这个容器里，我们碰撞着，摩擦着，产生了各色各样的灵感，活力与情绪。<br/></p>
+<p style="text-align:right;text-decoration:underline;">我们永远的家——计算机应用专业！</p>
+<p><img alt="配图" src="1.jpg"></p>
+<hr style="border: 0.3em solid grey;"/>
+<ol start="1" type="1">
+    <li><a href="page1.html" title="第一个网页">第一个网页</a></li>
+    <li><a href="page2.html" title="第二个网页">第二个网页</a></li>
+</ol>
+</body>
+</html>
+```
+
+Css
+
+```css
+body{
+    background-color:white;
+    font-size:100%;
+    font-family:"宋体";
+}
+h1{
+    font-size:2.5em;
+    color:black;
+    text-align:center;
+}
+p{
+    text-align:center;
+    color:black;
+}
+
+```
+
+</details>
+</details>
+
+<br><br><br><br><br>
+
+### 以下预留，仅为注释
+
+<!--
 详细内容标准格式
 #### 作业1</br>
 需求：[作业1.txt](Python/作业1/作业1.txt)  
@@ -627,7 +754,6 @@ t.done()
 
 <details>
 <summary>详细内容点击展开</summary>
-
 <details>
 <summary></summary>
 
