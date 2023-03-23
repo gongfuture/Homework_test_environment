@@ -8,15 +8,49 @@
 
 import random
 
-a = random.randrange(1, 19, 1)
-b = random.randrange(1, 19-a, 1)
-while 1:
-	print("\r请计算：{}+{}=".format(a, b), end="")
-	user_input = input()
-	if user_input == a + b:
-		print("恭喜您回答正确，请问是否继续计算？(y/n)", end="")
-		yn = input()
-		if yn == "y":
 
+class Yes(Exception):
+	pass
+
+
+class No(Exception):
+	pass
+
+
+a = random.randrange(1, 20, 1)
+b = random.randrange(1, 21 - a, 1)
+
+while True:
+	print("\r请计算：{}+{}=".format(a, b), end="")
+
+	try:
+		user_input = eval(input())
+		print(user_input)
+	except (NameError, SyntaxError):
+		print("请输入一个数字哦(●'◡'●)", end="")
+		continue
+
+
+	if user_input == a + b:
+		print("\r恭喜您回答正确，请问是否继续计算？(y/n)", end="")
+
+		try:
+			while 1:
+				yn = input()
+				if yn == "y":
+					raise Yes
+				elif yn == "n":
+					raise No
+				else:
+					print("\r请输入y或n！", end="")
+					continue
+
+		except Yes:
+			a = random.randrange(1, 20, 1)
+			b = random.randrange(1, 21 - a, 1)
+			continue
+
+		except No:
+			break
 	else:
 		print("回答错误，请重新计算！\n{}+{}=".format(a, b), end="")
