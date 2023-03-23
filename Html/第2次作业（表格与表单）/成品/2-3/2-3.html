@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta content="gongfuture" name="author">
-    <link href="2-3.css" rel="stylesheet" type="text/css">
-    <title>2-3</title>
-  </head>
-  <body>
-
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<meta content="gongfuture" name="author">
+	<title>2-3</title>
+</head>
+<body>
+<form action="chuli,php" method="post" name="frm" id="form1">
+	<table border="2px" width="100%" cellspacing="0" cellpadding="">
+		<caption style="font-size: 14pt;"><b>用户注册</b></caption>
+		<tr>
+			<td align="center"><b>姓名：</b></td>
+			<td><input type="text" name="name" value="username">
+		</tr>
+		<tr>
+			<td align="center"><b>密码：</b></td>
+			<td><input type="password" name="password" value=""></td>
+		</tr>
+		<tr>
+			<td align="center"><b>性别：</b></td>
+			<td>
+				<input type="radio" name="sex" value="male" checked>男
+				<input type="radio" name="sex" value="female">女
+				<input type="radio" name="sex" value="unknown">保密
+			</td>
+		</tr>
+		<tr>
+			<td align="center"><b>爱好：</b></td>
+			<td>
+				<input type="checkbox" name="hobby" value="read">读书
+				<input type="checkbox" name="hobby" value="swim">游泳
+				<input type="checkbox" name="hobby" value="music">音乐
+				<input type="checkbox" name="hobby" value="traval">旅游
+			</td>
+		</tr>
+		<tr>
+			<td align="center"><b>籍贯：</b></td>
+			<td>
+				<select name="origin">
+					<option value="江苏">江苏</option>
+					<option value="北京">北京</option>
+					<option value="上海">上海</option>
+					<option value="1">不写啦</option>
+					<option value="2">写三个意思一下</option>
+					<option value="3">太多了不想写了</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="center"><b>备注：</b></td>
+			<td>
+				<textarea name="others" rows="3" cols="30"> </textarea>
+			</td>
+		</tr>
+		<tr align="center">
+			<td colspan="2">
+				<input type="submit" name="submit" value="提交">
+				<input type="reset" name="reset" value="重置">
+				<input type="button" value="清空" onclick="document.frm.name.value =''">
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
 </html>
