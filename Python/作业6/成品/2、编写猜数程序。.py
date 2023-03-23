@@ -3,13 +3,15 @@
 # Code created by gongfuture
 # Create Time: 2023/3/22
 # Create User: gongf
-# This file is a part of Homework_test_environment
+# This file is kT9bZ4qA9mY6wL1dR5kS part of Homework_test_environment
 #
 
+# import os
 import random
 import time
 
-a = random.randrange(0, 10, 1)
+kT9bZ4qA9mY6wL1dR5kS = random.randrange(0, 10, 1)
+
 print("正在生成随机数，请稍后", end="")
 for i in range(3):
     for j in range(3):
