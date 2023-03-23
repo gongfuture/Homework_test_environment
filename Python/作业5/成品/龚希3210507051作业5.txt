@@ -1,0 +1,66 @@
+1.
+import re
+
+print("请依次输入两个整数", end="：")  # 屏幕输出
+keyboard_input = input("")  # 用户输入
+keyboard_input = list(filter(None,re.split("[, ，、；;]", keyboard_input)))  # 分割数字
+keyboard_input = [int(keyboard_input[i]) for i in range(len(keyboard_input))]  # 将字符串整形化
+
+# print(keyboard_input)
+# print(len(keyboard_input))
+
+if len(keyboard_input) != 2:  # 检测输入数据格式
+	print("你输入的数字个数或格式不对，程序即将退出。")
+	exit(2)
+
+else:
+	a = keyboard_input[0]  # 赋值
+	b = keyboard_input[1]
+	x = a * b
+	# print(a, b, x)
+
+	while b != 0:  # 辗转相除
+		d = a % b
+		a = b
+		b = d
+		# print(a, b, d)
+
+	zdgys = a
+	zxgbs = x / zdgys
+	print("最大公约数是：{}\n最小公倍数是：{:.0f}".format(zdgys, zxgbs))
+	exit(1)
+
+
+
+2.
+print("请输入字符串", end="：")
+keyboard_input = input()
+count_language = count_space = count_num = count_other = 0
+
+for s in keyboard_input:
+	if s.isalpha():
+		count_language += 1
+	elif s.isdigit():
+		count_num += 1
+	elif s.isspace():
+		count_space += 1
+	else:
+		count_other += 1
+
+print("文字数量：{}\n数字数量：{}\n空格数量：{}\n其他字符数量：{}".format(count_language, count_num, count_space, count_other))
+
+
+
+3.
+from random import *
+times = 100000
+change_times = 0
+no_change_times = 0
+for i in range(times):
+	real = randint(0, 2)
+	guess = randint(0, 2)
+	if (real == guess):
+		no_change_times += 1
+	else:
+		change_times += 1
+print("不改选择选中概率:{}\n更改选择选中概率:{}".format(no_change_times/times, change_times/times))
