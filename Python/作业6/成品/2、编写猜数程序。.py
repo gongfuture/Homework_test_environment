@@ -25,7 +25,7 @@ print("\r", end="")
 time.sleep(1)
 print("随机数已生成，请输入猜想数：", end="")
 times = 0
-print("\n", kT9bZ4qA9mY6wL1dR5kS, type(kT9bZ4qA9mY6wL1dR5kS), end="\n")
+# print("\n", kT9bZ4qA9mY6wL1dR5kS, type(kT9bZ4qA9mY6wL1dR5kS), end="\n")
 
 while True:
 	try:

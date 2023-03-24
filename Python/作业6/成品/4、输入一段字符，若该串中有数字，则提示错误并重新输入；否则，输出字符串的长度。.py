@@ -6,10 +6,14 @@
 # This file is a part of Homework_test_environment
 #
 
+import re
+
 print("请输入字符串", end="：")
-keyboard_input = input()
-for s in keyboard_input:
-	if s.isdigit():
-		print("输入有数字，请重新输入：")
+while True:
+	keyboard_input = input()
+	if bool(re.search(r'\d', keyboard_input)):
+		print("输入有数字，请重新输入：",end="")
+	else:
+		print("字符串长度为{}".format(len(keyboard_input)), end="")
 
 
