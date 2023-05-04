@@ -163,5 +163,7 @@ cython_debug/
 
 ### Personal ignore settings
 /Html/**/成品/*.zip
+/Html/**/成品/*.rar
+/Html/**/成品/*.7z
 .vscode
 /Python/**/成品/*.txt
