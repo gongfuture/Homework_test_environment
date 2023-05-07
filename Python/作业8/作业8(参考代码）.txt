@@ -1,0 +1,169 @@
+作业8  组合数据应用（II）—字典
+
+第1题：
+
+
+在原代码功能（将指定文字分词后，统计词频。）基础上，再完成下面3个功能：
+将下面一段文字分词后，统计词频。
+
+
+要求：
+
+1、输出频率最高的前2个词。
+
+2、过滤掉长度小于3的词
+
+3、修改输出格式为：词频最高的前2个词，即 love,loves。
+
+#原代码
+
+txt='love loves to love love.'
+
+#数据整理
+txt=txt.replace('.','')
+ls=txt.split()
+
+#计数
+
+d={}
+for i in ls:
+       d[i]=d.get(i,0)+1
+
+#排序（按次数降序）
+
+items = list(d.items())
+items.sort(key=lambda x:x[1], reverse=True) 
+ 
+#输出数据
+
+for i in items[0:2]:
+    print("{}   {}".format(i[0],i[1]))
+
+
+#农电2102张深圳38(3088514485) 2023/4/17 10:52:56
+#1.
+txt = 'love loves to love love.'
+txt = txt.replace('.', '')
+ls = txt.split()
+d = {}
+for i in ls:
+    if len(i)>=3:
+         d[i] = d.get(i, 0) + 1
+items = list(d.items())
+items.sort(key=lambda x: x[1], reverse=True)
+print("词频最高的前2个词，即{},{}".format(items[0][0],items[1][0]))  #
+
+
+第2题：
+
+我很喜欢看电影，我回忆了一下，这两年我觉得还不错的国产电影。
+下面，会将电影的影片名和主演放在字典里，
+如movie = {'妖猫传':['黄轩','染谷将太']}。
+需要你补充一些代码，让其他人只要输入演员名，就打印出：××出演了电影××。
+
+#代码：
+
+movies = {
+'妖猫传':['黄轩','染谷将太'],
+'无问西东':['章子怡','王力宏','祖峰'],
+'超时空同居':['雷佳音','佟丽娅'],
+}
+
+actor = input('你想查询哪个演员？')
+
+... ...
+
+方法1：
+
+#农电2102张博(2580681796) 2023/4/17 10:54:19
+movies = {'妖猫传':['黄轩','染谷将太'],'无问西东':['章子怡','王力宏','祖峰'],'超时空同居':['雷佳音','佟丽娅']}
+
+#重建字典（写字典）
+d={}
+for k in movies:
+    ls=list(movies.get(k))
+    for i in ls:
+        d[i]=k
+
+#按新字典查询（读字典）
+actor = input('你想查询哪个演员？')
+if actor not in d:
+    print("查无此人！")
+else:
+    print('{}出演了电影《{}》'.format(actor,d.get(actor)))
+
+
+#方法2：
+
+农电2102 秦洋(1596322634) 2023/4/17 11:55:50
+#2
+movies = {
+    '妖猫传':['黄轩','染谷将太'],
+    '无问西东':['章子怡','王力宏','祖峰'],
+    '超时空同居':['雷佳音','佟丽娅']
+}
+
+actor = input("你想查询哪个演员？")
+for movie,actors in movies.items():
+    if actor in actors:
+        print("{}出演了电影{}".format(actor,movie))
+
+#方法3：
+
+#3211801004董倚菲  9:50:36
+movies = {
+'妖猫传':['黄轩','染谷将太'],
+'无问西东':['章子怡','王力宏','祖峰'],
+'超时空同居':['雷佳音','佟丽娅'],
+}
+
+actor = input('你想查询哪个演员？')
+
+for i in movies:
+    if actor in movies.get(i):
+        print(i)  #改写完整的输出
+
+#方法4：
+
+movies = {
+'妖猫传':['黄轩','染谷将太'],
+'无问西东':['章子怡','王力宏','祖峰'],
+'超时空同居':['雷佳音','佟丽娅'],
+}
+
+actor = input('你想查询哪个演员？')
+for i in movies:
+    actors=movies[i]
+    
+    if actor in actors:
+        print(actor+ '出演了电影' +i)
+
+#方法5：
+
+#3210103056李政栋 2022/4/26 16:21:39
+
+movies = {
+'妖猫传':['黄轩','染谷将太'],
+'无问西东':['章子怡','王力宏','祖峰'],
+'超时空同居':['雷佳音','佟丽娅'],
+}
+
+flag=0
+while flag==0:
+    actor =input('你想查询哪个演员？')
+    for i in movies:
+        m=movies[i]
+        if actor in m:
+             print("{}出演了电影{}".format(actor,i))
+             flag=1
+    if flag==1:
+        break
+    else:
+        print("未查到相关结果,请重新输入!")
+        continue
+
+3、总结字典
+
+4、总结元组
+
+5、总结集合

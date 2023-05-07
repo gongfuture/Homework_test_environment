@@ -1,0 +1,116 @@
+作业5  程序设计之结构控制语句（I）
+
+1、求任意2个正整数的最大公约数和最小公倍数。
+
+#方法1，定义法
+a,b=eval(input("a=")), eval(input("a="))
+print("最大公约数是：",end="")
+for i in range(min(a,b),0,-1):
+    if a%i==0 and b%i==0:
+        print(i)
+        break
+print("最小公倍数是：",end="")
+print(a*b//i)
+
+
+#方法2，辗转相除法
+
+a=eval(input("请输入a="))
+b=eval(input("请输入b="))
+c=a*b
+while b!=0:
+    a,b=b,a%b
+print("最大公约数是：",a)
+print("最小公倍数是：",int(c//a))
+
+
+#朱熠(2132426308) 2023/3/21 9:32:24
+
+num1 = int(input("请输入一个数:"))
+num2 = int(input("请输入另外一个数:"))
+#判断num1与num2的大小
+if num1 > num2:
+    #获取最小值
+    min = num2
+else:
+    #获取最小值
+    min = num1
+for i in range(1,min+1):
+    #满足公因数的条件:
+    if (num1%i==0) and (num2%i==0):
+        c=i
+print('这两个数的最大公约数是:%d '%c)
+
+
+2、统计并输出任意字符串中不同字符（包括大小写字母、数字和其他字符）的个数。
+
+#利用字典完成
+
+s=input("请输入字符：")
+
+#统计
+d={}
+for i in s:
+    d[i]=d.get(i,0)+1
+
+#输出
+for i in d:
+    print("字符{}的个数是，{}".format(i,d[i]))
+
+
+
+#财务2101梁春炳(3129769236) 2023/3/21 9:18:53
+
+string = input("输入字符串：")
+letters=0
+digit=0
+others=0
+for p in string:
+     if p.isdigit():
+        digit+=1
+     elif p.isalpha():
+        letters+=1
+     else:
+        others+=1
+print("大小写字母={}，数字={}，其他字符等于={}".format(letters,digit,others))
+
+
+
+#农电2102 秦洋(1596322634) 2023/3/20 10:05:36
+
+#2
+n=input()
+A,B,C,D,E=0,0,0,0,0
+for i in n:
+    if 0x4e00<=ord(i)<=0x9fa5:
+        A+=1
+    elif 0x0061<=ord(i)<=0x007a or 0x0041<=ord(i)<=0x005a:
+        B+=1
+    elif 0x0030<=ord(i)<=0x0039:
+        C+=1
+    elif ord(i)==32:
+        D+=1
+    else:
+        E+=1
+print("中文字符有{}个，英文字符有{}个，数字有{}个，空格有{}个，其他字符有{}个。".format(A,B,C,D,E))
+
+
+3、用代码实现车羊门问题。（详见书上第4章，书后习题，编程第5题。）
+
+#农电2102张博(2580681796) 2023/3/20 10:07:43
+#羊车门
+import random as r
+times=10000
+not_change=0
+change=0
+for i in range(times):
+    car=r.randint(0,2)
+    goat=r.randint(0,2)
+    if car==goat:
+        not_change+=1
+    else:
+        change+=1
+print("不更改选择:{}".format(not_change/times))
+print("更改选择:{}".format(change/times))
+
+
