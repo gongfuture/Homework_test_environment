@@ -1,0 +1,290 @@
+作业6  程序设计之结构控制语句（II）
+
+1、输出九九乘法表。
+
+#农电2102张深圳38(3088514485)  10:09:24
+#1.
+for i in range(1, 10):
+    for j in range(1, i+1):
+        print("{}*{}={}".format(i, j,i*j),end=' ')
+    print("\n")
+
+
+#农电2102—45—张凯翔(3065745124)  10:25:56
+#1.
+for i in range(1,10):
+    for j in range(1,i+2):
+        if j<=i:
+            print('{}*{}={}'.format(i,j,i*j),end=' ')
+        else:
+            print('\n')
+
+#农电2102 秦洋(1596322634)  10:10:44
+#1
+n=0
+for i in range(1,10):
+    n+=1
+    for j in range(n):
+        print("{}*{}={}".format(i,j+1,i*(j+1)),end=' ')
+    print()
+
+
+
+#农电2102-杨博为(2601076449)  10:08:48
+#九九乘法表
+for i in range(1,10):
+    for p in range(1,10):
+        if(p<=i):
+            print(str(i)+("*")+str(p)+("=")+str(i*p),end=" ")
+        else:
+            print("")
+            break
+
+
+2、编写猜数程序。要求：
+   随机产生一个10以内的整数，猜该数是多少，直到猜对为止，并输出猜的次数。
+
+#仅猜数1次
+
+import random
+x=random.randint(1,10)
+g=int(input("请输入猜的数:"))
+if g<x:
+    print("猜小了!")
+elif g>x:
+    print("猜大了!")
+else:
+print("猜对了!")
+
+#猜中数，且输出猜了几次
+
+import random
+x=random.randint(1,10)
+c=0
+while 1:
+    c+=1
+    g=int(input("请输入猜的数:"))
+    #c+=1   计数器放这行不行？
+    if g<x:
+        print("猜小了!")
+    elif g>x:
+        print("猜大了!")
+    else:
+        print("猜对了!")
+        break
+    #c+=1   计数器放这行不行？
+print("总共猜了{}次。".format(c))
+
+#带异常处理的猜数
+
+import random
+x=random.randint(1,10)
+count=0
+c=0
+while True:
+    c+=1
+    try:
+        g=int(input("请输入猜的数:"))
+        if g<x:
+            print("猜小了!")
+        elif g>x:
+            print("猜大了!")
+        else:
+            print("猜对了!")
+            break
+    except:
+        print("输入非法字符,请重新输入!")
+        continue
+    count+=1
+print("共猜了{}次，有效{}次。".format(c,count+1))
+
+
+
+
+3、编写程序：随机生成20以内加法的算式，进行计算。
+若计算错误，重新计算；
+若计算正确，选择是否继续计算。
+示例：
+
+13+2=
+
+若输入15，则提示正确，并询问是否继续？
+   若继续，则输出新式，例如： 2+6=
+   若不继续，则退出程序
+若输入17（非15），则提示错误，并重新输出：
+
+算式 13+2=
+
+
+#方法1：
+来自yvonne（董倚菲）  10:39:08
+
+import random as rd
+a,b=rd.randint(0,20),rd.randint(0,20)
+while True:
+    try:
+        c=eval(input("{}+{}=".format(a,b)))
+    except:
+        print("输入错误，请输入一个数字")
+        continue
+    if c==a+b:
+        d=input("计算正确，是否继续计算(退出计算请输入1,输入其他则继续计算) ")
+        if d=="1":
+            break
+        else:
+            a,b=rd.randint(0,20),rd.randint(0,20)
+            #continue   这句可以省略
+    else:
+            print("计算错误，请继续计算")
+print("计算结束")
+
+#方法2：
+
+import random as rd
+flag=1
+while flag==1:
+    a,b=rd.randint(0,20),rd.randint(0,20)
+    c=a+b
+    while True:
+        try:
+            d=input("请输入{}+{}=".format(a,b))
+            if int(d)==c:
+                print("正确!")
+                break
+            else:
+                print("错误，重新计算！")
+        except:
+            print("输入非法字符，请输入数字!")
+    flag=eval(input("是否继续？（输入,1继续，0退出系统。）"))
+print("计算结束")
+
+
+
+
+4、输入一段字符，若该串中有数字，则提示错误并重新输入；
+   否则，输出字符串的长度。
+
+#方法1：
+
+while 1:
+    s=input("请输入一段字符：")
+    for i in s:
+        if i.isdigit():
+            print("输入字符中含有数字，请重新输入!")
+            break
+    else:
+        print("字符串长为，",len(s))
+        continue
+
+
+
+#农电2102张深圳38(3088514485)  10:09:24
+
+while True:
+    s=input("请输入一段字符：")
+    m=0
+    for i in s:
+        if i.isdigit():
+            m+=1
+    if m>0:
+        print("输入字符中含有数字，请重新输入：")
+    else:
+        print(len(s))
+        break
+
+
+#
+while True: 
+	s=input('请输入一段字符:')
+	number=other=0
+	for i in range(len(s)):
+		if '0' <= s[i] <= '9':
+			number+=1
+		else:
+			other+=1
+	if number>0:
+		print('错误，请重新输入')
+		continue         #注意这一句是否可以删除？
+	else: 
+		print('字符串长度为:',other)
+		break
+
+2023全国等考真题：
+
+1、输入数字，输出各数字和。
+示例：
+输入：1234
+输出：10
+
+工业2202 周龙(2961193348) 2023/3/29 8:51:14
+#输入数字，输出各数字和。
+a,b=0,input('请输入数字：')
+for i in b:
+    a+=int(i)
+print('数字和为:',a)
+
+2、输入任意正整数，输出数字对应的汉字。
+示例：
+输入：2345
+输出：二三四五
+
+a,b=input('请输入正整数：'),''
+c='零一二三四五六七八九'
+for i in a:
+    b+=c[int(i)]
+print('汉字为:',b)
+
+3、输入带中文的字符串，输出其中汉字的个数。
+示例：
+输入：438k哈根ab 达斯34kld
+输出：4个
+
+#工业2202 周龙(2961193348) 2023/3/24 17:14:03
+
+a,b=input('请输入字符串：'),0
+for i in a:
+    if '\u4e00'<=i<='\u9fff':
+        b+=1
+print('中文数为:',b)
+
+4、输出边长200的的四边形及其外接圆。
+#财务2101赵泽明(3325197048) 2023/3/28 9:16:14
+
+from turtle import*
+
+for i in range(4):
+     fd(200)
+     lt(90)
+lt(-45)
+circle(100*pow(2,0.5))
+
+5、输入小写字母，将其变换为对应的大写字母，并反序输出。
+示例：
+输入：acde
+输出：EDCA
+
+6、编写程序，可以输出下面图形。
+
+7 6 5 4 3 2 1 
+7 6 5 4 3 2 
+7 6 5 4 3 
+7 6 5 4 
+7 6 5 
+7 6 
+7 
+
+#方法1
+农电2102杨济名(2145700156) 2023/3/27 11:40:31
+
+for i in range(7):
+    for j in range(7,i,-1):
+        print(j,end=" ")
+    print("")
+
+
+
+
+
+
+
+
