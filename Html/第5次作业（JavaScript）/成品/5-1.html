@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="ChatGPT-3.5-turbo" name="author" />
+    <title>判断闰年</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      // 提示用户输入年份
+      var year = parseInt(prompt("请输入年份"));
+      // 判断是否是闰年
+      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        alert(year + "年是闰年!");
+      } else {
+        alert(year + "年不是闰年!");
+      }
+    </script>
+  </body>
+</html>

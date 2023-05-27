@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="ChatGPT-3.5-turbo" name="author" />
+    <title>学生成绩</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 提示用户输入7个学生成绩
+      var scores = [];
+      for (var i = 1; i <= 7; i++) {
+        var score = parseInt(prompt("请输入第" + i + "个学生的成绩"));
+        scores.push(score);
+      }
+
+      // 计算总分
+      var sum = 0;
+      for (var i = 0; i < scores.length; i++) {
+        sum += scores[i];
+      }
+      document.write("总分为：" + sum + "<br/>");
+
+      // 计算平均分
+      var avg = sum / scores.length;
+      document.write("平均分为：" + avg.toFixed(2) + "<br/>");
+
+      // 输出有几个成绩不及格
+      var count = 0;
+      for (var i = 0; i < scores.length; i++) {
+        if (scores[i] < 60) {
+          count++;
+        }
+      }
+      document.write("不及格的成绩有：" + count);
+    </script>
+  </body>
+</html>

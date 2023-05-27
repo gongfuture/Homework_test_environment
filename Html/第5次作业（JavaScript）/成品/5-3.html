@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta content="ChatGPT-3.5-turbo" name="author" />
+    <title>双向列表</title>
+    <style>
+      #container {
+        margin: 0 auto;
+        width: 500px;
+        height: 220px;
+        border: 5px double gray;
+        padding: 10px;
+      }
+      #container div {
+        float: left;
+        width: 150px;
+        height: 200px;
+        margin-right: 10px;
+      }
+      #container p {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      #container select {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 120px;
+      }
+      #container button {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <p>待选名单</p>
+        <select id="select1" multiple></select>
+      </div>
+      <div>
+        <button id="moveOut">移出</button>
+        <button id="moveIn">移入</button>
+      </div>
+      <div>
+        <p>选中名单</p>
+        <select id="select2" multiple></select>
+      </div>
+    </div>
+    <script>
+      // 创建select列表框中的option元素
+      function createOption(select, value, text) {
+        var option = document.createElement("option");
+        option.value = value;
+        option.text = text;
+        select.add(option, null);
+      }
+
+      // 创建待选名单列表框中的所有option元素
+      function createOptions() {
+        var select1 = document.getElementById("select1");
+        createOption(select1, "1", "张三");
+        createOption(select1, "2", "李四");
+        createOption(select1, "3", "王五");
+        createOption(select1, "4", "赵六");
+      }
+
+      // 删除select列表框中选中的option元素
+      function deleteOption(select, index) {
+        select.remove(index);
+      }
+
+      // 移动选中名单到待选名单列表中
+      function moveOut() {
+        var select1 = document.getElementById("select1");
+        var select2 = document.getElementById("select2");
+        var options = select2.options;
+        for (var i = options.length - 1; i >= 0; i--) {
+          if (options[i].selected) {
+            createOption(select1, options[i].value, options[i].text);
+            deleteOption(select2, i);
+          }
+        }
+      }
+
+      // 移动待选名单到选中名单列表中
+      function moveIn() {
+        var select1 = document.getElementById("select1");
+        var select2 = document.getElementById("select2");
+        var options = select1.options;
+        for (var i = options.length - 1; i >= 0; i--) {
+          if (options[i].selected) {
+            createOption(select2, options[i].value, options[i].text);
+            deleteOption(select1, i);
+          }
+        }
+      }
+
+      // 页面加载完成后创建待选名单列表框中的option元素
+      window.onload = function () {
+        createOptions();
+        document.getElementById("moveOut").onclick = moveOut;
+        document.getElementById("moveIn").onclick = moveIn;
+      };
+    </script>
+  </body>
+</html>
