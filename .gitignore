@@ -167,3 +167,4 @@ cython_debug/
 /Html/**/成品/*.7z
 .vscode
 /Python/**/成品/*.txt
+alist_readme.md
